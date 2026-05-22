@@ -1,0 +1,103 @@
+# 1
+
+## Table of Contents
+- [Recon](#recon)
+- [Target Interaction](#target-interaction)
+- [Target Navigation](#target-navigation)
+
+---
+
+## Recon
+
+### Machine 014400A1
+
+Scanning the machine with Nmap revealed that only the **FTP service** was open, narrowing the attack surface to a single target service.
+
+> 📸 _Add screenshot of Nmap results for Machine 014400A1_
+
+### Machine 014700A4
+
+Running the same Nmap command against this machine's IP revealed **multiple open ports**, including **RDP** and **SMB**.
+
+> 📸 _Add screenshot of Nmap results for Machine 014700A4_
+
+---
+
+## Target Interaction
+
+### Commands Used
+
+#### Machine 014400A1
+
+- Used `ftp` to connect and logged in as the **anonymous** user (no password required).
+
+#### Machine 014700A4
+
+- Used `smbmap` to enumerate shares. Discovered a `C:\` share on the machine, though the current user did not have access.
+
+---
+
+### Flaws Exploited
+
+| Machine | Vulnerability |
+|---------|--------------|
+| 014400A1 | Anonymous FTP login (no credentials required) |
+| 014700A4 | Unprotected Administrator login via SMB (no password set) |
+
+---
+
+### Interactions with Target
+
+> 📸 _Add screenshots of ALL target interactions below_
+
+#### Machine 014400A1
+
+1. Gained FTP access using the anonymous user.
+2. Ran `ls` to list files in the target directory — discovered `flag.txt`.
+3. Switched the FTP download directory to the local PWNBOX temp directory.
+4. Used `get` to download `flag.txt`.
+5. Exited the FTP session.
+6. `cd`'d to the temp directory.
+7. Used `cat` to read and capture the flag.
+
+#### Machine 014700A4
+
+1. Used `crackmapexec` — found that user **aartjan** had the password `123456`.
+2. Attempted `smbmap` with `aartjan` — **insufficient access** to `C:\`.
+3. Tried `smbmap` with the **Administrator** account and no password — access granted to `C:\`.
+4. Listed files on `C:\`, including the `Users` folder.
+
+---
+
+## Target Navigation
+
+### Machine 014700A4
+
+Using the unprotected Administrator account:
+
+1. Listed all files on `C:\` to confirm full access.
+2. Listed the contents of the **Administrator's Desktop** — located `flag.txt`.
+
+---
+
+## Flags
+
+### Machine 014400A1
+
+Retrieved via FTP download and `cat`:
+
+```
+035db21c881520061c53e0536e44f815
+```
+
+> 📸 _Add screenshot of flag retrieval_
+
+### Machine 014700A4
+
+Retrieved by executing a remote command to read `flag.txt` from the SMB file share:
+
+```
+951fa96d7830c451b536be5a6be008a0
+```
+
+> 📸 _Add screenshot of flag retrieval_
