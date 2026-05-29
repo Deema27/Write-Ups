@@ -4,7 +4,6 @@
 
 * [Reconnaissance](#reconnaissance)
 * [Target Interaction](#target-interaction)
-* [Target Navigation](#target-navigation)
 * [Flags Retrieved](#flags-retrieved)
 
 ---
@@ -153,19 +152,8 @@ This indicated a critical security misconfiguration involving an unprotected adm
 
 ---
 
-### Step 4 — Enumerating the File System
 
-Listed the contents of the `C:\` drive and identified important directories, including the `Users` directory.
-
-<img width="863" height="431" alt="image" src="https://github.com/user-attachments/assets/181d4b52-2b80-447c-8eea-c580b835e99c" />
-
----
-
-# Target Navigation
-
-## Machine 014700A4
-
-### Step 1 — Verifying Full File System Access
+### Step 4 — Verifying Full File System Access
 
 Enumerated the contents of the root `C:\` directory to confirm unrestricted administrative access to the target system.
 
@@ -173,7 +161,7 @@ Enumerated the contents of the root `C:\` directory to confirm unrestricted admi
 
 ---
 
-### Step 2 — Navigating to the Administrator Desktop
+### Step 5 — Navigating to the Administrator Desktop
 
 Listed the contents of the Administrator user's Desktop directory and located the target file `flag.txt`.
 
@@ -181,7 +169,7 @@ Listed the contents of the Administrator user's Desktop directory and located th
 
 ---
 
-### Step 3 — Reading the Flag File
+### Step 6 — Reading the Flag File
 
 Used the Windows `type` command to display the contents of `flag.txt` remotely through the SMB share.
 
