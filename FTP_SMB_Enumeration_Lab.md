@@ -199,5 +199,4 @@ The flag was retrieved by leveraging unrestricted SMB access through the Adminis
 ```
 
 
----
 
