@@ -2,10 +2,9 @@
 
 ## Table of Contents
 
-- Reconnaissance
-- Target Interaction
-- Target Navigation
-- Flags Retrieved
+- [Reconnaissance](#reconnaissance)
+- [Target Interaction](#target-interaction)
+- [Flags Retrieved](#flags-retrieved)
 
 ---
 
@@ -154,15 +153,8 @@ A successful PowerShell session was obtained on the target machine.
 
 ---
 
-# Target Navigation
 
-## Machine 10.129.8.60
-
-After gaining access via Evil-WinRM, system enumeration was performed to locate the user flag.
-
----
-
-### Step 1 — Confirm User Context
+### Step 8 — Confirm User Context
 
 ```powershell
 whoami
@@ -175,7 +167,7 @@ Confirmed access as user `claudio`.
 
 ---
 
-### Step 2 — Enumerating User Directories
+### Step 9 — Enumerating User Directories
 
 ```powershell
 cd C:\Users
@@ -189,10 +181,10 @@ Several user directories were identified, including **Public** and **claudio**.
 
 ---
 
-### Step 3 — Attempted Access to Public Directory
+### Step 10 — Attempted Access to Public Directory
 
 ```powershell
-cd Public
+cat Public
 ```
 
 Access was denied due to insufficient permissions.
@@ -202,7 +194,7 @@ Access was denied due to insufficient permissions.
 
 ---
 
-### Step 4 — Navigating to User Desktop
+### Step 11 — Navigating to User Desktop
 
 ```powershell
 cd C:\Users\claudio\Desktop
@@ -216,7 +208,7 @@ The `user.txt` file was located in the Desktop directory.
 
 ---
 
-### Step 5 — Reading the Flag
+### Step 12 — Reading the Flag
 
 ```powershell
 type user.txt
