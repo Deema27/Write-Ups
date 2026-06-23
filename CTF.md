@@ -201,5 +201,4 @@ HTB{I_g0t_th3_w1r3_4nd_y0u_g0t_th3_fl@g!!_b2e7ceb8ee35e95fca0dd19c1a81a59e}
 ## Analysis
 The challenge reinforced packet analysis, traffic filtering, protocol inspection, and network forensic investigation techniques.
 
----
 
