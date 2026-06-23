@@ -187,7 +187,6 @@ The flag was successfully retrieved by downloading `flag.txt` through the anonym
 035db21c881520061c53e0536e44f815
 ```
 
-<img width="502" height="83" alt="image" src="https://github.com/user-attachments/assets/3afeebbe-73ef-42aa-8f1f-6d6e54fc64e9" />
 
 ---
 
@@ -199,7 +198,6 @@ The flag was retrieved by leveraging unrestricted SMB access through the Adminis
 951fa96d7830c451b536be5a6be008a0
 ```
 
-<img width="788" height="38" alt="image" src="https://github.com/user-attachments/assets/03af8099-b811-4460-bb10-c5a2d83da6a6" />
 
 ---
 
